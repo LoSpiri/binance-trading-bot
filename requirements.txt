@@ -1,0 +1,5 @@
+python-binance
+Ta-lib
+numpy
+flask
+backtrader(?)

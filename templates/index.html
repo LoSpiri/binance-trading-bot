@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <title>Coinview</title>
+        <script src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>
+    </head>
+
+    <body>
+        <h1>{{ title }}</h1>
+
+        <div id="chart"></div>
+
+        <div id="trades"></div>
+
+        {% for symbol in symbols %}
+        {{symbol['symbol']}}
+        {% endfor %}
+
+        <div id="my_balances">
+            <h2>Balances</h2>
+
+            <table>
+                {% for balance in my_balances %}
+                <tr>
+                    <td>
+                        {{ balance['asset'] }} 
+                    </td>
+                    <td>
+                        {{ balance['free'] }}
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+
+        </div>
+
+        <h3>Settings</h3>
+        <div id="settings"></div>      
+            <input type="checkbox" /> 
+            RSI
+            <input type="text" name="rsi_length" placeholder="14"/>
+            Oversold
+            <input type="text" id="rsi_oversold" name="rsi_oversold" placeholder="30" />
+            Overbought
+            <input type="text" id="rsi_overbought" name="rsi_overbought" placeholder="70" />
+
+        <script>
+            //var binanceSocket = new WebSocket("wss://stream.binance.com:9443/ws/btcusdt@trade");
+
+            var tradeDiv = document.getElementById('trades')
+
+            /*binanceSocket.onmessage = function (event) {
+                console.log(event.data);
+
+                var messageObject = JSON.parse(event.data)
+                tradeDiv.append(messageObject.p)
+            }*/
+        </script>
+        <script src="{{url_for('static', filename='chart.js')}}"></script>
+    </body>
+</html>
+
+
