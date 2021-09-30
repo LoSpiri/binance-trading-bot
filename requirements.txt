@@ -1,5 +1,5 @@
 python-binance
+flask
 Ta-lib
 numpy
-flask
 backtrader(?)
