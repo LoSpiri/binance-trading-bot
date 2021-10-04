@@ -1,4 +1,4 @@
-# binance-trading-bot
+# Binance Trading Bot
  
 This is my first personal project and it's intended as a tool for me and my friends to automatically analize and subsequently buy and sell cryptos using the indicators and strategies we are already using to manage our Binance wallets.
 
